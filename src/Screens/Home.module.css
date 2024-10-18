@@ -1,0 +1,36 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, #1a1826, #413b5e);
+  padding: 20px;
+  align-items: center; /* Centra horizontalmente */
+  justify-content: center; /* Centra verticalmente */
+  height: 100vh; /* Asegúrate de que ocupe toda la altura de la ventana */
+}
+
+.titleContainer {
+  text-align: center; /* Centra el texto dentro del contenedor */
+}
+
+.home p {
+  font-size: 2.5em;
+  color: #f1f1f1;
+}
+
+.callToAction {
+  background-color: #508094;
+  padding: 10px;
+  margin-top: 20px; /* Ajusta el margen superior para dar espacio */
+  transition: 0.5s;
+}
+
+.callToAction:hover {
+  padding: 15px;
+  cursor: pointer;
+}
+
+.ctaContainer {
+  padding-top: 40px;
+  display: flex; /* Para centrar el botón */
+  justify-content: center; /* Centra el botón horizontalmente */
+}
