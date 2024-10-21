@@ -9,12 +9,20 @@ const NavBar = () => {
     setNavBarOpen(!navBarOpen);
   };
 
+  // Nueva función para manejar el click en los enlaces y asegurarse de que el anclaje ocurra antes
+  const handleLinkClick = (path) => {
+    window.location.href = path;  // Esto asegura que se haga el scroll al ID correcto
+    setTimeout(() => {
+      setNavBarOpen(false); // Espera un momento antes de cerrar el menú
+    }, 300);  // Ajusta el tiempo para asegurarte de que el desplazamiento ocurra antes de cerrar el menú
+  };
+
   const links = [
-    { id: 1, link: "Home" },
-    { id: 2, link: "Services" },
-    { id: 3, link: "HowWeWork" },
-    { id: 4, link: "Benefits" },
-    { id: 5, link: "Contact" }
+    { id: 1, link: "Home", path: "#home" },
+    { id: 2, link: "Services", path: "#services" },
+    { id: 3, link: "HowWeWork", path: "#howwework" },
+    { id: 4, link: "Benefits", path: "#benefits" },
+    { id: 5, link: "Contact", path: "#contact" }
   ];
 
   return (
@@ -24,21 +32,23 @@ const NavBar = () => {
         <span>TRANSPORT GO | Cargo Solutions</span>
       </div>
 
-      <div onClick={toggleNavBar} className={styles.menuIcon}>
+      <div onClick={toggleNavBar} className={`${styles.menuIcon} ${styles.hideOnDesktop}`}>
         {navBarOpen ? <AiOutlineClose size={25} /> : <AiOutlineMenu size={25} />}
       </div>
 
-      {navBarOpen && (
-        <ul className={styles.navList}>
-          {links.map(x => (
-            <li key={x.id} className={styles.navLink}>
-              <a href={`#${x.link}`} onClick={toggleNavBar}>
-                {x.link === "HowWeWork" ? "How we work" : x.link}
-              </a>
-            </li>
-          ))}
-        </ul>
-      )}
+      <ul className={`${styles.navList} ${navBarOpen ? styles.showOnMobile : ''}`}>
+        {links.map(x => (
+          <li key={x.id} className={styles.navLink}>
+            <a 
+              href={x.path} 
+              onClick={() => handleLinkClick(x.path)}  
+              className={x.link === "Contact" ? styles.contactLink : ''}  // Aplica el estilo solo a "Contact"
+            >
+              {x.link === "HowWeWork" ? "How we work" : x.link}
+            </a>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };

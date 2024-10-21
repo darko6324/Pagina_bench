@@ -1,3 +1,4 @@
+/* Estilos básicos del navbar */
 .navBar {
   display: flex;
   height: 60px;
@@ -5,11 +6,12 @@
   position: fixed;
   justify-content: space-between;
   align-items: center;
-  background-color: #4a4564; /* Color de fondo del Navbar */
-  padding: 0 20px; /* Espaciado horizontal */
-  z-index: 1000; /* Asegúrate de que el navbar esté por encima de otros elementos */
+  background-color: #4a4564;
+  padding: 0 20px; /* Asegura espacio a ambos lados del navbar */
+  z-index: 1000;
 }
 
+/* Menú abierto en dispositivos móviles */
 .navOpen {
   display: flex;
   position: fixed;
@@ -17,42 +19,129 @@
   width: 100%;
   background-color: #4a4564;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   top: 0;
   left: 0;
+  z-index: 1001; /* Asegura que el menú siempre esté por encima */
 }
 
-.navList {
-  display: flex;
-  flex-direction: column; /* Asegúrate de que la lista se apile verticalmente */
-  align-items: center; /* Centra los elementos de la lista */
-  margin-top: 20px; /* Espacio superior para la lista */
+/* Ocultar el icono del menú en pantallas grandes */
+.hideOnDesktop {
+  display: block;
 }
 
-.navLink {
-  display: flex;
-  font-size: 1.5em; /* Tamaño del texto */
-  font-weight: 400;
-  color: #f1f1f1;
-  padding: 10px 0; /* Espacio entre los enlaces */
+@media (min-width: 768px) {
+  .hideOnDesktop {
+    display: none;
+  }
+
+  /* Alinear los elementos en fila y ajustar espaciado */
+  .navList {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .navLink {
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Asegurarse de que el último enlace no se pegue al borde derecho */
+  .navList li:last-child {
+    margin-right: 30px; /* Añadir más espacio al último elemento */
+  }
+
+  .navLink a {
+    text-decoration: none;
+    color: #f1f1f1;
+  }
+
+  .navLink a:visited {
+    color: #f1f1f1;
+  }
+
+  .navLink:hover a {
+    color: #00ffcc; /* Cambia el color al pasar el mouse */
+  }
 }
 
-.navLink:hover {
-  cursor: pointer;
-  color: #00ffcc; /* Color al pasar el mouse */
+/* Clase para el enlace de Contact con fondo verde, texto negro y en negrilla */
+.contactLink {
+  border: 2px solid green;
+  border-radius: 10px;
+  padding: 5px 15px; /* Añadir más espacio lateral dentro del botón */
+  color: black !important;
+  background-color: green !important;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Cambiar el color del fondo y el texto al pasar el mouse */
+.contactLink:hover {
+  border-color: #00ff00;
+  background-color: #00ff00 !important;
+  color: white !important;
+  font-weight: bold;
+}
+
+/* Menú en dispositivos móviles */
+@media (max-width: 768px) {
+  .navList {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+  }
+
+  .navOpen .navList {
+    display: flex;
+  }
+
+  .navLink {
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+
+  .navLink a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .navLink:hover a {
+    color: #00ffcc;
+  }
+
+  /* Ajustar el botón Contact en móviles */
+  .contactLink {
+    padding: 10px 20px; /* Aumentar el padding en móviles */
+    margin-right: 15px; /* Añadir un pequeño margen a la derecha */
+  }
 }
 
 .logo {
   display: flex;
-  align-items: center; /* Alinea el logo con el texto */
+  align-items: center;
+  white-space: nowrap;
+  color: #ffffff;
 }
 
 .logoImage {
-  width: 50px; /* Tamaño del logo */
-  height: 50px; /* Mantiene la proporción del logo */
-  margin-right: 10px; /* Espacio entre el logo y el texto */
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
 }
 
 .menuIcon {
-  cursor: pointer; /* Cambia el cursor al pasar sobre el icono */
+  cursor: pointer;
+  font-size: 25px;
+  color: white;
+  margin-right: 20px; /* Añadir margen al ícono para que no esté tan pegado */
 }

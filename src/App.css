@@ -1,0 +1,18 @@
+/* Desplazamiento suave */
+html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Estilos para evitar el espacio en blanco entre las secciones */
+  section {
+    height: auto; /* Ajustar la altura al contenido, eliminando el min-height */
+    padding: 0; /* Eliminar padding dentro de las secciones */
+    margin: 0; /* Eliminar márgenes entre secciones */
+    box-sizing: border-box; /* Asegura que los bordes no afecten el tamaño de las secciones */
+  }
+  
+  /* Opcional: Ajustar colores de fondo */
+  #home, #services, #howwework, #benefits, #contact {
+    background-color: #4a4564; /* Ajustar color según tu diseño */
+  }
+  

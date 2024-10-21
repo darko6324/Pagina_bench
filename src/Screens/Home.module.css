@@ -18,14 +18,21 @@
 }
 
 .callToAction {
-  background-color: #508094;
-  padding: 10px;
-  margin-top: 20px; /* Ajusta el margen superior para dar espacio */
-  transition: 0.5s;
+  border: 2px solid green;
+  border-radius: 10px;
+  padding: 10px 20px; /* Aumentar el espacio interior */
+  margin-top: 20px;
+  background-color: green; /* Color de fondo verde */
+  color: black; /* Texto en negro */
+  text-decoration: none; /* Sin subrayado */
+  font-weight: bold; /* Texto en negrilla */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Suave transición */
 }
 
 .callToAction:hover {
-  padding: 15px;
+  background-color: #00ff00; /* Cambia el color de fondo en hover */
+  color: white; /* Texto en blanco cuando pasa el mouse */
+  padding: 10px 20px; /* Mantener el tamaño del botón en hover */
   cursor: pointer;
 }
 
