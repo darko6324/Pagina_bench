@@ -1,19 +1,30 @@
 .footer {
-    background-color: #3a3a3a; /* Color más oscuro que el de la imagen */
-    color: #f1f1f1;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .flags {
-    margin-bottom: 10px;
-  }
-  
-  .flags span {
-    margin: 0 5px; /* Espaciado entre las banderas */
-  }
-  .logoImage {
-    width: 50px;
-    height: 50px;
-  }
-  
+  background-color: #3a3a3a; /* Color más oscuro que el de la imagen */
+  color: #f1f1f1;
+  padding: 20px;
+  text-align: center;
+}
+
+.flags {
+  margin-bottom: 10px;
+}
+
+.flags span {
+  margin: 0 5px; /* Espaciado entre las banderas */
+}
+
+.logoImage {
+  width: 50px;
+  height: 50px;
+}
+
+/* Estilo para el enlace del correo electrónico */
+.footer a {
+  color: #ffffff; /* Color blanco para el enlace */
+  font-weight: bold; /* Texto en negrilla */
+  text-decoration: none; /* Sin subrayado */
+}
+
+.footer a:hover {
+  text-decoration: underline; /* Subrayado al pasar el cursor */
+}

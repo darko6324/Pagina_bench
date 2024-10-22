@@ -77,7 +77,7 @@
   border: 2px solid green;
   border-radius: 10px;
   padding: 5px 15px; /* Añadir más espacio lateral dentro del botón */
-  color: black !important;
+  color: white !important;
   background-color: green !important;
   text-decoration: none;
   font-weight: bold;
@@ -88,7 +88,7 @@
 .contactLink:hover {
   border-color: #00ff00;
   background-color: #00ff00 !important;
-  color: white !important;
+  color: black !important;
   font-weight: bold;
 }
 

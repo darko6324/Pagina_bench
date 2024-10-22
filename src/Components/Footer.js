@@ -12,7 +12,7 @@ const Footer = () => {
         <span>🇦🇷 Buenos Aires, Argentina: 710 Bouchard, Piso 12</span>
       </div>
       <p>Terms and Conditions | PQRS | Privacy Policy | Linkage</p>
-      <p>Email: <a href="mailto:info@mipagina.com">info@mipagina.com</a></p>
+      <p>Email: <a href="mailto:info@transportgo.lat">info@transportgo.lat</a></p>
       <p>&copy; Transport © 2024</p>
     </footer>
   );
